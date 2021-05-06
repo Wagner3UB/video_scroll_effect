@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Document</title>
+</head>
+
+<body>
+
+  <section class="container">
+    <div class="content">
+      <h1>Scrollare il sito per cominciare!</h1>
+      <p>Cominciamo...</p>
+    </div>
+  </section>
+
+  <section class="container">
+    <div class="content">
+      <h1>Step 1</h1>
+      <p>Qua sarà il primo punto forte!</p>
+    </div>
+  </section>
+
+  <section class="container">
+    <div class="content">
+      <h1>Step 2</h1>
+      <p>Qua qualcosa di importante!</p>
+    </div>
+  </section>
+
+  <section class="container">
+    <div class="content">
+      <h1>Step 3</h1>
+      <h2>90%</h2>
+      <p>Qui puoi mettere un numero significativo</p>
+
+    </div>
+  </section>
+
+  <section class="container">
+    <div class="content">
+      <h1>Step 4</h1>
+      <p>E quale sarebbe il motivo dei 4 passi??</p>
+    </div>
+  </section>
+
+  <section class="site">
+    <div class="site-content">
+      <img src="girl.jpg" alt="pic1">
+      <h1>Contenuto del sito</h1>
+    </div>
+  </section>
+
+  <div id="set-height"></div>
+
+  <video id="v0" tabindex="0" , autobuffer preload>
+    <source type='video/mp4;codecs="avc1.42E01E, mp4a.40.2"' src="fingers.mp4">
+    </source>
+  </video>
+
+
+
+  <script src="sticky.js"></script>
+
+
+  <script>
+
+    enterView({
+        selector: 'section',
+        enter: function(el) {
+            el.classList.add('text-focus-in');
+        }
+    })
+
+    var frameNumber = 0, // start video at frame 0
+    // lower numbers = faster playback
+    playbackConst = 1000, 
+    // get page height from video duration
+    setHeight = document.getElementById("set-height"), 
+    // select video element         
+    vid = document.getElementById('v0'); 
+    // var vid = $('#v0')[0]; // jquery option
+
+// dynamically set the page height according to video length
+vid.addEventListener('loadedmetadata', function() {
+setHeight.style.height = "auto";
+});
+
+
+// Use requestAnimationFrame for smooth playback
+function scrollPlay(){  
+var frameNumber  = window.pageYOffset/playbackConst;
+vid.currentTime  = frameNumber;
+window.requestAnimationFrame(scrollPlay);
+}
+
+window.requestAnimationFrame(scrollPlay);
+
+</script>
+
+</body>
+
+</html>
