@@ -4,7 +4,7 @@ Hello World! 🌍 🌎 🌏
 
 ————————————
 
-EN - Beatiful interactive visual scroll effect using an video.
+EN - Beautiful interactive visual scroll effect using an video.
 
 PT - Um belo efeito visual interativo usando scroll em um vídeo.
 
